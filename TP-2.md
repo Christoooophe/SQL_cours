@@ -81,12 +81,22 @@ GROUP BY v.ANNEE
 ## 18. Lister les quantités vendues de chaque article pour l’année 2016.
 
 ```mysql
-
+SELECT v.QUANTITE, a.NOM_ARTICLE, v.ID_ARTICLE, SUM(v.QUANTITE) AS QUANTITE_VENDUES
+FROM ventes v
+JOIN article a ON v.ID_ARTICLE = a.ID_ARTICLE
+WHERE v.ANNEE = 2016
+GROUP BY v.ID_ARTICLE, v.QUANTITE
+ORDER BY QUANTITE_VENDUES DESC
 ```
 
 ## 19. Lister les quantités vendues de chaque article pour les années 2014, 2015, 2016.
 
 ```mysql
-
+SELECT v.ANNEE, a.NOM_ARTICLE, v.ID_ARTICLE, SUM(v.QUANTITE) AS QUANTITE_VENDUES
+FROM ventes v
+JOIN article a ON v.ID_ARTICLE = a.ID_ARTICLE
+WHERE v.ANNEE BETWEEN 2014 AND 2016
+GROUP BY v.ID_ARTICLE, v.ANNEE
+ORDER BY QUANTITE_VENDUES DESC
 ```
 

@@ -22,7 +22,7 @@ formateur de vous aider ou de vous donner le docker-compose.
 
 La table vente est au pluriel, les autres au singulier. 
 Année dans les ventes limitée à 11 caractères
-
+Le nom de la table type est mal choisi, nom réservé
 
 ## Exercices
 
